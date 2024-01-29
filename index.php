@@ -1,3 +1,10 @@
+<?PHP
+
+require_once('password.php');//引入验证文件
+
+MkEncrypt('112233');//设置访问密码
+
+?>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="ckplayer/css/ckplayer.css">
