@@ -1,27 +1,42 @@
-# myphp
-30秒在Vercel构建自己的无服务器php环境并实现国内直连访问。
-### 操作步骤：
-- 准备好域名
-- forks本项目
-- 为域名添加一条CNAME到`cname-china.vercel-dns.com`
-- 访问 https://vercel.com 使用Github账号登陆，选择`myphp`并构建。
-- 编辑Vercel网站项目的域名设置，改为你的域名保存，等待生效。
-- 访问你的域名。
-> 最后你可以：删除`README.md`，删除或编辑`index.html`。将自己Github仓库的`myphp`项目设置为私有。
-### 说明：
-- 这只是一个简单的示例，每次编辑或上传新的php文件到Github仓库的api目录下都会自动构建。构建完成后访问你的域名即可。
-### 主要目录文件结构：
-```sh
-myphp
-├── api
-│   └── index.php
-└── vercel.json
+#### 介绍
+一款用于在网页上播放视频的软件，本软件为开源软件，遵守开源协议：MIT
+
+#### 视频格式支持
+支持mp4,flv,m3u8,ts等格式
+
+#### 播放形式支持
+支持点播、直播、直播+回放
+
+#### 平台支持
+支持移动端，PC端。
+
+#### 功能支持
+支持使用js监听播放器的各种状态，支持使用js控制播放器的各种操作
+
+#### 软件架构
+本软件采用javascript编写核心代码，css文件定义播放器风格
+
+#### 安装教程
+不存在安装过程，将下载包里的ckplayer文件夹上传到网站环境中，在需要播放视频的页面上引入ckplayer.js及ckplayer.css文件，在需要插入视频的地方使用如下代码：
+
 ```
-### php版本：
-默认部署的php版本为8.2.X。编辑`vercel.json`文件可构建不同版本的php环境。
-- `vercel-php@0.6.0` - PHP 8.2.x
-- `vercel-php@0.5.3` - PHP 8.1.x
-- `vercel-php@0.4.1` - PHP 8.0.x
-- `vercel-php@0.3.3` - PHP 7.4.x
-### 官方仓库：
-- https://github.com/vercel-community/php/
+<link type="text/css" rel="stylesheet" href="ckplayer/css/ckplayer.css" />
+<script type="text/javascript" src="ckplayer/js/ckplayer.js" charset="UTF-8"></script>
+<div class="video" style="width: 600px;height: 400px;">播放器容器</div>
+<script type="text/javascript">
+    //定义一个变量：videoObject，用来做为视频初始化配置
+    var videoObject = {
+        container: '.video', //“#”代表容器的ID，“.”或“”代表容器的class
+        video: 'http://ckplayer-video.oss-cn-shanghai.aliyuncs.com/sample-mp4/05cacb4e02f9d9e.mp4'//视频地址
+    };
+    var player = new ckplayer(videoObject);//初始化播放器
+</script>
+```
+
+
+#### 使用说明
+使用过程中碰到问题，请至官网查看手册：http://www.ckplayer.com/manual/
+
+#### 参与贡献
+niandeng
+
